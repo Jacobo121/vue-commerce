@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PlatziCommerce</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div id="app">
+        <header>
+            <h3>PlatziCommerce</h3>
+            <button class="cart" >Carro {0}</button>
+            <div class="cart-content">
+                <div class="cart-content__product">
+                    <img src="" alt="">
+                    <span>Producto - $ 500.000 </span>
+                </div>
+            </div>
+            <div class="cart-content">
+                <div class="cart-content__product">
+                    <img src="" alt="">
+                    <span>Producto - $ 500.000 </span>
+                </div>
+            </div>
+        </header>
+        <main>
+            <section class="product">
+                <div class="producto__thumbnails">
+                    <div class="thumb"></div>
+                    <div class="thumb"></div>
+                </div>
+                <div class="product__image">
+                    <img src="" alt="">
+                </div>
+            </section>
+            <section class="description">
+                <h4>Producto</h4>
+                <span class="badge nav">Nuevo</span>
+                <span class="badge offer">oferta</span>
+                <p class="description__status"></p>
+                <p class="description__price" >5.500.000</p>
+                <p class="descripcion__content">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error consequuntur aliquid ipsum ad praesentium excepturi dignissimos similique maiores, architecto magni et amet facere veniam libero quia. Eveniet nemo soluta a?</p>
+                <div class="discount" >
+                    <span>Condigo de descuento</span>
+                    <input type="text" placeholder="Ingresa tu codigo">
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="https://unpkg.com/vue@next"></script>
+    <script>
+        const {createApp} = Vue;
+
+        const app = createApp;
+        app.mount("#app")
+    </script>
+</body>
+</html>
