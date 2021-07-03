@@ -212,120 +212,42 @@
 
     <script src="https://unpkg.com/vue@next"></script>
     <script>
-      const { createApp } = Vue;
+      const { createApp, ref } = Vue;
 
       const app = createApp({
-        data() {
-          return {
-            product: {
-              name: "Camara",
-              price: 450_000,
-              stock: 3,
-              content: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt
+        setup() {
+          const product = ref({
+            name: "Camara",
+            price: 450_000,
+            stock: 3,
+            content: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt
                 atque dolorum corporis, reiciendis eaque temporibus quod magnam amet
                 ea natus delectus? Aut placeat ipsam minus labore voluptas. Porro,
                 vel aliquid!`,
-              images: [
-                {
-                  image: "./images/camara.jpg",
-                  thumbnail: "./images/camara-thumb.jpg"
-                },
-                {
-                  image: "./images/camara-2.jpg",
-                  thumbnail: "./images/camara-2-thumb.jpg"
-                }
-              ],
-              offer: true,
-              new: true
-            },
-            activeImage: 0,
-            cartOpen: false,
-            cart: [
+            images: [
               {
-                name: "Camara PL",
-                price: 200_000,
-                stock: 1,
-                content: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt
-                atque dolorum corporis, reiciendis eaque temporibus quod magnam amet
-                ea natus delectus? Aut placeat ipsam minus labore voluptas. Porro,
-                vel aliquid!`,
-                images: [
-                  {
-                    image: "./images/camara.jpg",
-                    thumbnail: "./images/camara-thumb.jpg"
-                  },
-                  {
-                    image: "./images/camara-2.jpg",
-                    thumbnail: "./images/camara-2-thumb.jpg"
-                  }
-                ],
-                offer: true,
-                new: true
+                image: "./images/camara.jpg",
+                thumbnail: "./images/camara-thumb.jpg"
               },
               {
-                name: "Camara PL2",
-                price: 450_000,
-                stock: 1,
-                content: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt
-                atque dolorum corporis, reiciendis eaque temporibus quod magnam amet
-                ea natus delectus? Aut placeat ipsam minus labore voluptas. Porro,
-                vel aliquid!`,
-                images: [
-                  {
-                    image: "./images/camara.jpg",
-                    thumbnail: "./images/camara-thumb.jpg"
-                  },
-                  {
-                    image: "./images/camara-2.jpg",
-                    thumbnail: "./images/camara-2-thumb.jpg"
-                  }
-                ],
-                offer: true,
-                new: true
-              },
-              {
-                name: "Camara PL2",
-                price: 450_000,
-                stock: 1,
-                content: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt
-                atque dolorum corporis, reiciendis eaque temporibus quod magnam amet
-                ea natus delectus? Aut placeat ipsam minus labore voluptas. Porro,
-                vel aliquid!`,
-                images: [
-                  {
-                    image: "./images/camara.jpg",
-                    thumbnail: "./images/camara-thumb.jpg"
-                  },
-                  {
-                    image: "./images/camara-2.jpg",
-                    thumbnail: "./images/camara-2-thumb.jpg"
-                  }
-                ],
-                offer: true,
-                new: true
-              },
-              {
-                name: "Camara PL2",
-                price: 450_000,
-                stock: 1,
-                content: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt
-                atque dolorum corporis, reiciendis eaque temporibus quod magnam amet
-                ea natus delectus? Aut placeat ipsam minus labore voluptas. Porro,
-                vel aliquid!`,
-                images: [
-                  {
-                    image: "./images/camara.jpg",
-                    thumbnail: "./images/camara-thumb.jpg"
-                  },
-                  {
-                    image: "./images/camara-2.jpg",
-                    thumbnail: "./images/camara-2-thumb.jpg"
-                  }
-                ],
-                offer: true,
-                new: true
+                image: "./images/camara-2.jpg",
+                thumbnail: "./images/camara-2-thumb.jpg"
               }
-            ]
+            ],
+            offer: true,
+            new: true
+          });
+
+          const activeImage = ref(0);
+
+          const cartOpen = ref(false);
+          const cart = ref([]);
+
+          return {
+            product,
+            activeImage,
+            cartOpen,
+            cart
           };
         }
       });
